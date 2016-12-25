@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { APP_PROVIDERS } from './app.providers';
 import { AppComponent } from './app.component';
 import { appRoutingProviders, routing } from './app.routing';
-import { NavbarModule } from './shared';
 import { HomeModule } from './home/home.module';
 import { TodolistModule } from './todolist/todolist.module';
 
@@ -14,7 +13,6 @@ import { TodolistModule } from './todolist/todolist.module';
     ],
     imports: [
         BrowserModule,
-        NavbarModule,
         HomeModule,
         TodolistModule,
         routing

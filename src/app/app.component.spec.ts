@@ -10,7 +10,6 @@ import { provideRoutes, Routes, RouterModule } from '@angular/router';
 import { Component } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
 
 @Component({
     selector: 'as-test-cmp',
@@ -30,8 +29,7 @@ describe('AppComponent', () => {
         TestBed.configureTestingModule({
             declarations: [
                 TestRouterComponent,
-                AppComponent,
-                NavbarComponent
+                AppComponent
             ],
             imports: [ RouterTestingModule, RouterModule ],
             providers: [ provideRoutes(config) ]
