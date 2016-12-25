@@ -1,8 +1,8 @@
 {
   "name": "angular2-starter",
   "version": "1.0.1",
-  "author": "Antony Budianto",
-  "description": "Angular 2 Starter with extensible features",
+  "author": "NerdCats",
+  "description": "Enterprise user dashboard for TaskCat",
   "main": "src/tmp/app/main.js",
   "repository": {
     "type": "git",
@@ -37,9 +37,6 @@
     "istanbul"
   ],
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/antonybudianto/angular2-starter/issues"
-  },
   "dependencies": {
     "@angular/common": "~2.1.2",
     "@angular/compiler": "~2.1.2",
