@@ -5,7 +5,6 @@ import { APP_PROVIDERS } from './app.providers';
 import { AppComponent } from './app.component';
 import { appRoutingProviders, routing } from './app.routing';
 import { HomeModule } from './home/home.module';
-import { TodolistModule } from './todolist/todolist.module';
 
 @NgModule({
     declarations: [
@@ -14,7 +13,6 @@ import { TodolistModule } from './todolist/todolist.module';
     imports: [
         BrowserModule,
         HomeModule,
-        TodolistModule,
         routing
     ],
     providers: [ APP_PROVIDERS, appRoutingProviders ],
