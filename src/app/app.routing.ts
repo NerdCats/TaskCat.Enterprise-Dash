@@ -1,7 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeRoutes } from './home/index';
-import { LoginRoutes } from './login/index';
+import { LoginRoute } from './login/index';
 
 import { AuthGuard } from './auth/auth.guard';
 
@@ -16,7 +16,7 @@ for (let route of securedRoutes) {
 }
 
 const publicRoutes: Routes = [
-    ...LoginRoutes
+    LoginRoute
 ];
 
 const appRoutes: Routes = [

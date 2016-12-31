@@ -5,6 +5,14 @@ import { AuthConstants } from './auth.constants';
 @Injectable()
 export class AuthGuard implements CanActivate {
 
+    private _loginRoute: string;
+    public get loginRoute(): string {
+        return this._loginRoute;
+    }
+    public set loginRoute(v: string) {
+        this._loginRoute = v;
+    }
+
     /**
      * AuthGuard should block components from loading if authentication denies so
      */
@@ -15,6 +23,6 @@ export class AuthGuard implements CanActivate {
             return true;
         }
 
-        this.router.navigate(['/login']);
+        this.router.navigate([this.loginRoute || '/login']);
     }
 }
