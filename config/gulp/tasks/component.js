@@ -32,5 +32,6 @@ gulp.task('watch-css', function () {
 });
 
 function convertToTmpPath(file) {
-    return file.path.replace(/src\/app\//, config.tmpApp);
+    var unixPath = file.path.replace(/\\/g, "/");
+    return unixPath.replace(/src\/app\//, config.tmpApp);
 }
