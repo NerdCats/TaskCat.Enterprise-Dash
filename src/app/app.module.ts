@@ -8,15 +8,15 @@ import { HomeModule } from './home/home.module';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
     ],
     imports: [
         BrowserModule,
         HomeModule,
         routing
     ],
-    providers: [ APP_PROVIDERS, appRoutingProviders ],
-    bootstrap: [ AppComponent ]
+    providers: [APP_PROVIDERS, appRoutingProviders],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }
