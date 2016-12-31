@@ -10,3 +10,5 @@ env.json
 .DS_Store
 /src/assets/styles/*.css
 npm-debug.log
+app/**/*.js
+app/**/*.js.map
