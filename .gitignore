@@ -9,3 +9,4 @@ env.json
 /src/tmp
 .DS_Store
 /src/assets/styles/*.css
+npm-debug.log
