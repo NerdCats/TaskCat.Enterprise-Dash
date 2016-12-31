@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { HomeComponent } from './index';
+import { DashboardModule } from '../dashboard/dashboard.module';
 
 @NgModule({
     declarations: [
@@ -7,6 +8,9 @@ import { HomeComponent } from './index';
     ],
     exports: [
         HomeComponent
+    ],
+    imports: [
+        DashboardModule
     ]
 })
 export class HomeModule {
