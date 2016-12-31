@@ -3,12 +3,9 @@ import { AuthConstants, AuthGuard, AuthService} from './index';
 
 @NgModule({
     providers: [
-        AuthService
-    ],
-    exports: [
+        AuthService,
         AuthConstants,
-        AuthGuard,
-        AuthService
+        AuthGuard
     ]
 })
 export class AuthModule {}
