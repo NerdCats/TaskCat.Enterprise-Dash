@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { LoginComponent } from './index';
-import { AuthModule } from '../auth/auth.module';
+import { LoginComponent, LoginRoute } from './index';
+import { AuthModule, AuthGuard } from '../auth/index';
 
 @NgModule({
     declarations: [
@@ -13,4 +13,11 @@ import { AuthModule } from '../auth/auth.module';
         AuthModule
     ]
 })
-export class LoginModule { }
+export class LoginModule {
+    /**
+     * TaskCat Enterprise dashboard login module
+     */
+    constructor(private authGuard: AuthGuard) {
+        authGuard.loginRoute = LoginRoute.path;
+    }
+}
