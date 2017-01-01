@@ -37,7 +37,11 @@
                         <p>Password is required.</p>
                     </div>
                 </div>
-                <button type="submit" (click)="login()" [disabled]="!loginForm.form.valid" class="btn btn-lg btn-success btn-block">Login</button>
+                <button type="submit" (click)="login()" [disabled]="!loginForm.form.valid || loading" class="btn btn-lg btn-success btn-block">
+                    Login
+                    <span class="fa fa-circle-o-notch fa-spin fa-lg fa-fw" [hidden]="!loading"></span>
+                </button>
+
             </fieldset>
         </form>
 
