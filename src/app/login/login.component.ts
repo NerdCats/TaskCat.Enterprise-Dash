@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthService } from '../auth/index';
+import { CONSTANTS } from '../shared/index';
 
 @Component({
     moduleId: module.id,
@@ -9,9 +10,10 @@ import { AuthService } from '../auth/index';
     templateUrl: 'login.html'
 })
 export class LoginComponent implements OnInit {
-    public model: any = {};
+    model: any = {};
     loading = false;
     error = '';
+    appTitle = CONSTANTS.MAIN.APP.BRAND;
 
     /**
      * Login component for TaskCat.Enterprise Dashboard

@@ -1,5 +1,5 @@
 export const MAIN = {
     APP: {
-        BRAND: 'TaskCat Enterprise Dash'
+        BRAND: 'GO! Fetch Enterprise'
     }
 };

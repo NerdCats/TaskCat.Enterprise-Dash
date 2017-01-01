@@ -7,6 +7,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { AuthConstants } from './auth.constants';
 import { JwtHelper } from 'angular2-jwt';
+import { CONSTANTS } from '../shared/index';
 
 @Injectable()
 export class AuthService {
@@ -17,7 +18,7 @@ export class AuthService {
 
     login(username: string, password: string) {
         let headers = new Headers();
-        let tokenUrl = 'http://fetchdev.gobd.co/api/auth/token'; // TODO: Need to definitely load from settings
+        let tokenUrl = CONSTANTS.ENV.API_BASE + 'auth/token'; // TODO: Need to definitely load from settings
 
         let urlEncodedParam =
             'grant_type=' + 'password' +
