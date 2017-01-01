@@ -6,9 +6,9 @@
         Login
     </div>
     <div class="login-box-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+        <p class='login-box-msg'> {{error || "Sign in to start your session"}}</p>
         <!-- On form submit, we call the Login event with the username and the password from the inputs -->
-        <form>
+        <form name="form" #loginForm="ngForm">
             <fieldset>
                 <div class="form-group">
                     <input  class="form-control"
@@ -37,7 +37,7 @@
                         <p>Password is required.</p>
                     </div>
                 </div>
-                <button (click)="login()" class="btn btn-lg btn-success btn-block">Login</button>
+                <button type="submit" (click)="login()" [disabled]="!loginForm.form.valid" class="btn btn-lg btn-success btn-block">Login</button>
             </fieldset>
         </form>
 
