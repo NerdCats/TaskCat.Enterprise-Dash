@@ -28,6 +28,9 @@
         'angular2-jwt': {
             main: 'angular2-jwt.js',
             defaultExtension: 'js'
+        },
+        'angular2-letter-avatar': {
+            defaultExtension: 'js'
         }
     };
 
@@ -36,7 +39,8 @@
         '@angular',
         'rxjs',
         'lodash',
-        'angular2-jwt'
+        'angular2-jwt',
+        'angular2-letter-avatar'
     ];
 
     // Add package entries for packages that expose barrels using index.js
