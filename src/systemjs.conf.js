@@ -24,6 +24,10 @@
         },
         'rxjs': {
             defaultExtension: 'js'
+        },
+        'angular2-jwt': {
+            main: 'angular2-jwt.js',
+            defaultExtension: 'js'
         }
     };
 
@@ -31,7 +35,8 @@
     var npmPackages = [
         '@angular',
         'rxjs',
-        'lodash'
+        'lodash',
+        'angular2-jwt'
     ];
 
     // Add package entries for packages that expose barrels using index.js

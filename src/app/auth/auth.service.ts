@@ -6,13 +6,14 @@ import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { AuthConstants } from './auth.constants';
+import { JwtHelper } from 'angular2-jwt';
 
 @Injectable()
 export class AuthService {
     /**
      * Authentication service for enterprise dashboard
      */
-    constructor(private http: Http, private localStorage: LocalStorage) { }
+    constructor(private http: Http, private localStorage: LocalStorage, private jwtHelper: JwtHelper) { }
 
     login(username: string, password: string) {
         let headers = new Headers();
@@ -47,8 +48,13 @@ export class AuthService {
         if (!data) {
             throw new Error('Invalid/blank auth data, Fatal Error');
         }
-
-        this.localStorage.setObject(AuthConstants.AUTH_TOKEN_KEY, data);
+        try {
+            let userData = this.jwtHelper.decodeToken(data.access_token);
+            data.userData = userData;
+            this.localStorage.setObject(AuthConstants.AUTH_TOKEN_KEY, data);
+        } catch (ex) {
+            throw new Error('Fatal error, failed to parse token');
+        }
         return true;
     }
 
