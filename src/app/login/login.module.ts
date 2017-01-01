@@ -7,7 +7,8 @@ import { AuthModule, AuthGuard } from '../auth/index';
         LoginComponent
     ],
     exports: [
-        LoginComponent
+        LoginComponent,
+        AuthModule
     ],
     imports: [
         AuthModule
