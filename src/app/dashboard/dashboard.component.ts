@@ -11,7 +11,7 @@ import { AuthConstants } from '../auth/index';
 })
 export class DashboardComponent {
     public avatarData: any = {
-        size: 50,
+        size: 40,
         background: '#008d4c', // by default it will produce dynamic colors
         fontColor: '#FFFFFF',
         isSquare: false,
