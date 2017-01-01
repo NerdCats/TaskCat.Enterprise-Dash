@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { LoginComponent, LoginRoute } from './index';
 import { AuthModule, AuthGuard } from '../auth/index';
 
@@ -11,7 +12,8 @@ import { AuthModule, AuthGuard } from '../auth/index';
         AuthModule
     ],
     imports: [
-        AuthModule
+        AuthModule,
+        FormsModule
     ]
 })
 export class LoginModule {

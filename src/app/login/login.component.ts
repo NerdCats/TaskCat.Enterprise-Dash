@@ -9,7 +9,7 @@ import { AuthService } from '../auth/index';
     templateUrl: 'login.html'
 })
 export class LoginComponent implements OnInit {
-    model: any = {};
+    public model: any = {};
     loading = false;
     error = '';
 
