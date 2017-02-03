@@ -6,7 +6,6 @@ import { CONSTANTS } from '../shared/index';
 @Component({
     moduleId: module.id,
     selector: 'as-dashboard',
-    inputs: ['pageTitle', 'pageSubtitle'],
     templateUrl: 'dashboard.html'
 })
 export class DashboardComponent {
