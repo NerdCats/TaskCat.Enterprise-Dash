@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { LocalStorage } from '../shared/index';
 import { AuthConstants } from '../auth/index';
-
+import { CONSTANTS } from '../shared/index';
 
 @Component({
     moduleId: module.id,
@@ -20,6 +20,8 @@ export class DashboardComponent {
 
     public userInfo: any = {};
 
+    public productInfo: { platform_title: string; product_title: string };
+
     /**
      * Dashborad container component for TaskCat.Enterprise
      */
@@ -28,6 +30,10 @@ export class DashboardComponent {
         this.avatarData.text = userToken.userData.sub;
         this.userInfo.Name = userToken.userData.sub;
         this.userInfo.Email = userToken.email;
-        console.log(userToken.userData);
+
+        this.productInfo = {
+            platform_title: CONSTANTS.MAIN.APP.PLATFORM_TITLE,
+            product_title: CONSTANTS.MAIN.APP.PRODUCT_TITLE
+        };
     }
 }
