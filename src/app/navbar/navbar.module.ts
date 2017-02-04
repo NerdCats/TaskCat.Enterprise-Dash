@@ -1,21 +1,18 @@
 import { NgModule } from '@angular/core';
+import { NavbarComponent } from './index';
 import { CommonModule } from '@angular/common';
-import { NavbarModule } from '../navbar/index';
-import { DashboardComponent } from './index';
 import { LetterAvatarModule } from '../shared/letter-avatar/index';
 
 @NgModule({
     declarations: [
-        DashboardComponent
+        NavbarComponent
     ],
     exports: [
-        DashboardComponent,
+        NavbarComponent
     ],
     imports: [
         CommonModule,
-        NavbarModule,
         LetterAvatarModule
     ]
 })
-export class DashboardModule {
-}
+export class NavbarModule { }
