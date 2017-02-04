@@ -44,7 +44,7 @@ export class LoggerService implements ILogger {
     }
 
     /**
-     *
+     * Generic logger service for console
      */
     constructor() {
         this.log('Logger Initialized');
