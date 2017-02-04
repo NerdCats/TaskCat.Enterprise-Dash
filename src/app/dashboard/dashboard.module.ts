@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarModule } from '../navbar/index';
-import { DashboardComponent } from './index';
 import { LetterAvatarModule } from '../shared/letter-avatar/index';
+
+import { DashboardComponent } from './index';
+import { SidebarComponent } from '../sidebar/index';
 
 @NgModule({
     declarations: [
-        DashboardComponent
+        DashboardComponent,
+        SidebarComponent
     ],
     exports: [
         DashboardComponent,

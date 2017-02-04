@@ -6,6 +6,7 @@ export const MAIN = {
     },
     COMPANY: {
         TITLE: 'gobd.co',
-        URL: 'http://gobd.co'
+        URL: 'http://gobd.co',
+        TAGLINE: 'Delivery Simplified'
     }
 };

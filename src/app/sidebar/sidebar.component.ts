@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { LocalStorage } from '../shared/index';
 import { AuthConstants } from '../auth/index';
-import { CONSTANTS } from '../shared/index';
 
 @Component({
     moduleId: module.id,
-    selector: 'as-dashboard',
-    templateUrl: 'dashboard.html'
+    selector: 'as-sidebar',
+    templateUrl: 'sidebar.html'
 })
-export class DashboardComponent {
+export class SidebarComponent {
+    // TODO: Replication here again, need to put this somewhere in a settings.
     public avatarData: any = {
         size: 40,
         background: '#008d4c', // by default it will produce dynamic colors
@@ -18,9 +18,6 @@ export class DashboardComponent {
     };
 
     public userInfo: any = {};
-    public companyInfo: { title: string, url: string; tagline: string; };
-
-    public productInfo: { platform_title: string; product_title: string };
 
     /**
      * Dashborad container component for TaskCat.Enterprise
@@ -30,16 +27,5 @@ export class DashboardComponent {
         this.avatarData.text = userToken.userData.sub;
         this.userInfo.Name = userToken.userData.sub;
         this.userInfo.Email = userToken.email;
-
-        this.productInfo = {
-            platform_title: CONSTANTS.MAIN.APP.PLATFORM_TITLE,
-            product_title: CONSTANTS.MAIN.APP.PRODUCT_TITLE
-        };
-
-        this.companyInfo = {
-            title: CONSTANTS.MAIN.COMPANY.TITLE,
-            url: CONSTANTS.MAIN.COMPANY.URL,
-            tagline: CONSTANTS.MAIN.COMPANY.TAGLINE
-        };
     }
 }
