@@ -18,6 +18,7 @@ export class DashboardComponent {
     };
 
     public userInfo: any = {};
+    public companyInfo: { title: string, url: string };
 
     public productInfo: { platform_title: string; product_title: string };
 
@@ -34,5 +35,7 @@ export class DashboardComponent {
             platform_title: CONSTANTS.MAIN.APP.PLATFORM_TITLE,
             product_title: CONSTANTS.MAIN.APP.PRODUCT_TITLE
         };
+
+        this.companyInfo = { title: CONSTANTS.MAIN.COMPANY.TITLE, url: CONSTANTS.MAIN.COMPANY.URL };
     }
 }
