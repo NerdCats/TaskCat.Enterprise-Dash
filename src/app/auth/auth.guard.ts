@@ -22,7 +22,6 @@ export class AuthGuard implements CanActivate {
         if (localStorage.getItem(AuthConstants.AUTH_TOKEN_KEY)) {
             return true;
         }
-
         this.router.navigate([this.loginRoute || '/login']);
     }
 }

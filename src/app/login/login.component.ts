@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthService } from '../auth/index';
-import { CONSTANTS } from '../shared/index';
+import { CONSTANTS, LoggerService } from '../shared/index';
 
 @Component({
     moduleId: module.id,
@@ -20,7 +20,8 @@ export class LoginComponent implements OnInit {
      */
     constructor(
         private router: Router,
-        private authService: AuthService) { }
+        private authService: AuthService,
+        private loggerService: LoggerService) {}
 
     ngOnInit() {
         this.authService.logout();
@@ -35,7 +36,7 @@ export class LoginComponent implements OnInit {
                 }
                 this.loading = false;
             }, error => {
-                console.log(error);
+                this.loggerService.error(error);
                 this.error = error;
                 this.loading = false;
             });

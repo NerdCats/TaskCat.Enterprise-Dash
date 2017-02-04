@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { LocalStorage } from '../shared/index';
 import { AuthConstants } from '../auth/index';
 import { CONSTANTS } from '../shared/index';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
     moduleId: module.id,
@@ -27,7 +28,7 @@ export class NavbarComponent {
     public productInfo: { platform_title: string; product_title: string };
 
     // Navbar constructor
-    constructor(private localStorage: LocalStorage) {
+    constructor(private localStorage: LocalStorage, private authService: AuthService) {
         let userToken = localStorage.getObject(AuthConstants.AUTH_TOKEN_KEY);
         this.avatarData.text = userToken.userData.sub;
         this.userInfo.Name = userToken.userData.sub;
@@ -37,5 +38,9 @@ export class NavbarComponent {
             platform_title: CONSTANTS.MAIN.APP.PLATFORM_TITLE,
             product_title: CONSTANTS.MAIN.APP.PRODUCT_TITLE
         };
+    }
+
+    public signout() {
+        this.authService.logout();
     }
 }

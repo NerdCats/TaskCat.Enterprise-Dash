@@ -39,6 +39,13 @@ export class LoggerService implements ILogger {
     public warn(...args: any[]): void {
         if (console && console.warn) { console.warn(...args); }
     }
+
+    /**
+     *
+     */
+    constructor() {
+        this.log('Logger Initialized');
+    }
 }
 
 

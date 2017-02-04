@@ -1,21 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import { Router } from '@angular/router';
-import { LocalStorage } from '../shared';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { AuthConstants } from './auth.constants';
 import { JwtHelper } from 'angular2-jwt';
-import { CONSTANTS } from '../shared/index';
+import { CONSTANTS, LoggerService, LocalStorage } from '../shared/index';
 
 @Injectable()
 export class AuthService {
     /**
      * Authentication service for enterprise dashboard
      */
-    constructor(private http: Http, private localStorage: LocalStorage, private jwtHelper: JwtHelper, private router: Router) { }
+    constructor(
+        private http: Http,
+        private localStorage: LocalStorage,
+        private jwtHelper: JwtHelper,
+        private router: Router,
+        private loggerService: LoggerService) { }
 
     login(username: string, password: string) {
         let headers = new Headers();
@@ -46,10 +50,12 @@ export class AuthService {
         /**
          * INFO: We don't know at this point what would be the login route
          * of this app. Since we are guarding it by canActivate we can safely
-         * expect that navigating to the home route will the do the right thing
-         * and move the app to the login page.
+         * expect that navigating to the login route will the do the right thing
+         * and move the app to the login page. But we don't yet know that is the
+         * proper route. May be at some point we would want it to have a way
+         * to know which would be the proper login route for the app
         */
-        this.router.navigate(['']);
+        this.router.navigate(['/login']);
     }
 
     private _extractAndSaveAuthData(res: Response) {
@@ -66,6 +72,7 @@ export class AuthService {
              **/
             let roleString: String = userData.role;
 
+            // TODO: Make sure we send out a nice message otherwise
             if (roleString.indexOf('Enterprise') === -1) {
                 return false;
             }
@@ -81,7 +88,7 @@ export class AuthService {
     private _extractAuthError(res: Response) {
         let error = res.json();
         let errorMsg = error.error_description || 'Server error';
-        console.error(errorMsg);
+        this.loggerService.error(errorMsg);
         return Observable.throw(errorMsg);
     }
 }

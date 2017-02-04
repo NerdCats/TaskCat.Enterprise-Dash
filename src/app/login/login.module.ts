@@ -21,6 +21,6 @@ export class LoginModule {
      * TaskCat Enterprise dashboard login module
      */
     constructor(private authGuard: AuthGuard) {
-        authGuard.loginRoute = LoginRoute.path;
+        authGuard.loginRoute = '/' + LoginRoute.path;
     }
 }
