@@ -20,7 +20,7 @@ export class SidebarComponent {
     public userInfo: any = {};
 
     /**
-     * Dashborad container component for TaskCat.Enterprise
+     * Sidebar constructor
      */
     constructor(private localStorage: LocalStorage) {
         let userToken = localStorage.getObject(AuthConstants.AUTH_TOKEN_KEY);

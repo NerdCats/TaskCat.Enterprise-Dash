@@ -5,11 +5,13 @@ import { LetterAvatarModule } from '../shared/letter-avatar/index';
 
 import { DashboardComponent } from './index';
 import { SidebarComponent } from '../sidebar/index';
+import { FooterComponent } from '../footer/index';
 
 @NgModule({
     declarations: [
         DashboardComponent,
-        SidebarComponent
+        SidebarComponent,
+        FooterComponent
     ],
     exports: [
         DashboardComponent,
