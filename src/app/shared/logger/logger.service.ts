@@ -1,3 +1,5 @@
+import { Injectable } from '@angular/core';
+
 export interface ILogger {
     assert(...args: any[]): void;
     error(...args: any[]): void;
@@ -10,6 +12,7 @@ export interface ILogger {
 
 declare var console: any;
 
+@Injectable()
 export class LoggerService implements ILogger {
     public assert(...args: any[]): void {
         if (console && console.assert) { console.assert(...args); }
