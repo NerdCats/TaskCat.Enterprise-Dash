@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
+import { Router } from '@angular/router';
 import { LocalStorage } from '../shared';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/throw';
@@ -14,7 +15,7 @@ export class AuthService {
     /**
      * Authentication service for enterprise dashboard
      */
-    constructor(private http: Http, private localStorage: LocalStorage, private jwtHelper: JwtHelper) { }
+    constructor(private http: Http, private localStorage: LocalStorage, private jwtHelper: JwtHelper, private router: Router) { }
 
     login(username: string, password: string) {
         let headers = new Headers();
@@ -42,6 +43,13 @@ export class AuthService {
 
     logout() {
         localStorage.removeItem(AuthConstants.AUTH_TOKEN_KEY);
+        /**
+         * INFO: We don't know at this point what would be the login route
+         * of this app. Since we are guarding it by canActivate we can safely
+         * expect that navigating to the home route will the do the right thing
+         * and move the app to the login page.
+        */
+        this.router.navigate(['']);
     }
 
     private _extractAndSaveAuthData(res: Response) {
