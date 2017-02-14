@@ -1,30 +1,44 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { ChartsModule } from 'ng2-charts';
+import { HttpModule } from '@angular/http';
+
+// Local Modules
 import { NavbarModule } from '../navbar/index';
 import { LetterAvatarModule } from '../shared/letter-avatar/index';
 
+
+import { DASHBOARD_PROVIDERS } from './dashboard-event.service';
+
+// Local Components
 import { DashboardComponent } from './index';
 import { SidebarComponent } from '../sidebar/index';
 import { FooterComponent } from '../footer/index';
-import { DashviewComponent } from '../dashview/index';
 import { DashviewHeaderComponent } from '../dashview-header/index';
+
+import { GlimpseComponent } from '../glimpse/index';
 
 @NgModule({
     declarations: [
         DashboardComponent,
         SidebarComponent,
         FooterComponent,
-        DashviewComponent,
-        DashviewHeaderComponent
+        DashviewHeaderComponent,
+        GlimpseComponent
     ],
     exports: [
         DashboardComponent,
     ],
     imports: [
+        RouterModule,
         CommonModule,
         NavbarModule,
-        LetterAvatarModule
-    ]
+        LetterAvatarModule,
+        ChartsModule,
+        HttpModule
+    ],
+    providers: [...DASHBOARD_PROVIDERS]
 })
 export class DashboardModule {
 }
