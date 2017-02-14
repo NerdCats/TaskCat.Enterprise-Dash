@@ -4,7 +4,7 @@
  *
  */
 
-(function(global) {
+(function (global) {
     // ENV
     global.ENV = global.ENV || 'development';
 
@@ -31,6 +31,14 @@
         },
         'angular2-letter-avatar': {
             defaultExtension: 'js'
+        },
+        'chart.js': {
+            main: 'dist/Chart.js',
+            defaultExtension: 'js'
+        },
+        'ng2-charts': {
+            main: 'ng2-charts.js',
+            defaultExtension: 'js'
         }
     };
 
@@ -40,7 +48,9 @@
         'rxjs',
         'lodash',
         'angular2-jwt',
-        'angular2-letter-avatar'
+        'angular2-letter-avatar',
+        'chart.js',
+        'ng2-charts'
     ];
 
     // Add package entries for packages that expose barrels using index.js
@@ -68,15 +78,15 @@
         map[pkgName] = 'node_modules/' + pkgName;
     });
 
-    packageNames.forEach(function(pkgName) {
+    packageNames.forEach(function (pkgName) {
         packages[pkgName] = { main: 'index.js', defaultExtension: 'js' };
     });
 
-    ngPackageNames.forEach(function(pkgName) {
+    ngPackageNames.forEach(function (pkgName) {
         map['@angular/' + pkgName] = 'node_modules/@angular/' + pkgName +
             '/bundles/' + pkgName + '.umd.js';
-        map['@angular/' + pkgName+'/testing'] = 'node_modules/@angular/' + pkgName +
-        '/bundles/' + pkgName + '-testing.umd.js';
+        map['@angular/' + pkgName + '/testing'] = 'node_modules/@angular/' + pkgName +
+            '/bundles/' + pkgName + '-testing.umd.js';
     });
 
     var config = {
