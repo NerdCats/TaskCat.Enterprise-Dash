@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginRoute } from './login/index';
 import { DashboardRoutes } from './dashboard/index';
 
-// import { AuthGuard } from './auth/auth.guard';
+import { AuthGuard } from './auth/auth.guard';
 
 const securedRoutes: Routes = [
     ...DashboardRoutes
