@@ -1,6 +1,7 @@
 env.json
 .idea/
 .vscode
+.vs
 /node_modules
 /bower_components
 /build
